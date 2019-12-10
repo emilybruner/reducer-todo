@@ -1,6 +1,6 @@
 import React from 'react';
-import TodoList from './components/TodoList'
-import Todo from './'
+
+import Todo from './components/Todo';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
     
       <h1>Reducer Todo</h1>
-      <TodoList />
+      
       
     </div>
   );
