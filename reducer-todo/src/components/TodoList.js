@@ -3,7 +3,7 @@ import {reducer, todo} from '../reducers/todoreducer';
 import {Todo} from './Todo';
 import {TodoForm} from './TodoForm';
 
-export const TodoList = () => {
+const TodoList = () => {
     const [state, dispatch] = useReducer(reducer, todo);
 
     return (
@@ -20,3 +20,5 @@ export const TodoList = () => {
     
     )
 }
+
+export default TodoList;
