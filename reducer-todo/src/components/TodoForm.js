@@ -2,26 +2,29 @@ import React, {useState} from "react"
 
 const TodoForm = (props) => {
 
-    const [itemName, setItemName] = useState()
+    const [name, setName] = useState("");
+
 
     const handleChanges = (e) => {
-        setItemName(e.target.value)
-    }
+        setName(e.target.value)
+    };
+
+    const submitItem = e => {
+        e.preventDefault();
+        setName("";)
+    };
 
     return (
-        <div>
+        <form onSubmit={submitItem}>
             <input 
-                type="text"
-                name="item"
-                value={itemName}
-                onChange={handleChanges}
-            />
-            <button onClick={() => {
-                props.dispatch({type: "addItem", payload:itemName})
-                setItemName("")
-            }}>+</button>
-        </div>
-    )
-}
+             type="text"
+             value={name}
+             name="name"
+             onChange={handleChanges}
+             />
+             <button onClick={() => props.dispatch({type: "ADD_ITEM", payload: name})}>Add</button>
+        </form>
+    );
+};
 
 export default TodoForm;
