@@ -4,6 +4,10 @@ export const initialState = [{
     id: 3892987589
 }];
 
+export const ADD_TODO = 'ADD_TODO';
+export const TOGGLE_COMPLETED = 'TOGGLE_COMPLETED';
+export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
+
 export const reducer = (state=initialState, action) => {
     console.log(state, action);
     switch (action.type) {
